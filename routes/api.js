@@ -406,8 +406,15 @@ app.post("/getWishlist",function(req,res){
               if(err)
               console.log(err);
             else{
+                console.log(req.body) ;
+                console.log("Results....") ;
+                console.log(results) ;
                 console.log("name fetched");
-                res.send({name : results[0].name, user_id: results[0].id});
+                if (results.length !== 0 ) {
+                    res.send({name : results[0].name, user_id: results[0].id});
+                }else {
+                    res.send( { name : null } ) ;
+                }
             //console.log(results); // results contains rows returned by server // fields contains extra meta data about results, if available
             }
           }
