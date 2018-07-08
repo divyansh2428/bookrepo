@@ -29,7 +29,7 @@ connection.query(
     );
 
     connection.query(
-        `create table if not exists users(id integer primary key auto_increment,name varchar(250),email varchar(250),password varchar(250),college varchar(250),address varchar(250),contact_no varchar(250))`,
+        `create table if not exists users(id integer primary key auto_increment,name varchar(250),email varchar(250),password varchar(250),college varchar(250),address varchar(250),contact_no varchar(250),token varchar(250))`,
           function(err, results, fields) {
               if(err)
               console.log(err);
@@ -51,8 +51,8 @@ connection.query(
                 }
               }
             );
-    
-    
+
+            
         connection.query(
             `create table if not exists items(product_id integer primary key auto_increment,seller varchar(250),name varchar(250),author varchar(250),description varchar(250),price integer,url varchar(250),con varchar(250))`,
               function(err, results, fields) {
